@@ -18,7 +18,8 @@
 }
 
 .navbar-conatiner-one h2 {
-    color: #0056D2
+    color: #0056D2;
+    cursor: pointer;
 }
 
 .navbar-conatiner-one {
@@ -56,17 +57,30 @@
     height: 45px;
     transform: translateY(-100px);
     display: none;
+    background-color: rgb(250, 247, 247);
+    align-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    filter: saturate(5px);
+    
+}
+
+.scrolled{
+    position: fixed;
 }
 
 .mobile-menu ul {
     display: flex;
     justify-content: space-between;
     color: rgb(0, 0, 0);
-    align-items: center;
+    
+
 }
 
 .mobile-menu li{
     font-weight: 600;
+    
+    
 }
 
 .mobile-menu li:hover {
