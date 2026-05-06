@@ -18,22 +18,22 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Routes >
-        
+
         <Route element={<PublicRoute />}>
           <Route path='/' element={<LandingPage />} />
           <Route path='/login' element={<Auth />} />
         </Route>
-       <Route element={<PrivateRoute/>}>
-         <Route path='/home' element={<Home />} />
-        <Route path='/browse' element={<Browse />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/save' element={<Save />} />
-        <Route path='/sell' element={<Sell />} />
-       </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path='/home' element={<Home />} />
+          <Route path='/browse' element={<Browse />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/save' element={<Save />} />
+          <Route path='/sell' element={<Sell />} />
+        </Route>
       </Routes>
-      <Footer/>
+      <Footer />
 
 
     </>
