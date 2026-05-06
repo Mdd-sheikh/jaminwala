@@ -6,6 +6,7 @@ const Navbar = () => {
     <nav className='navbar'>
     <div className="navbar-container">
         <div className="navbar-conatiner-one">
+            <button><i class="fa-solid fa-bars"></i></button>
             <h2>Bhumi Bazar</h2>
         </div>
         <div className="navbar-conatiner-two">

@@ -14,6 +14,18 @@
 
 .navbar-conatiner-one h2{
     color:#0056D2
+
+}
+
+.navbar-conatiner-one{
+   display: flex;
+   gap: 30px;
+}
+
+.navbar-conatiner-one button{
+    display: none;
+    border: none;
+    background-color: transparent;
 }
 
 .navbar-conatiner-two ul{
@@ -30,4 +42,18 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: max(14px, 1.1vw);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .navbar-conatiner-two ul{
+        display: none;
+    }
+
+    .navbar-conatiner-one button{
+    display: block;
+    
+}
 }
