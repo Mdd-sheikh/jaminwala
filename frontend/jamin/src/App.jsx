@@ -11,12 +11,16 @@ import Browse from './Pages/Browse/Browse'
 import Profile from './Pages/Profile/Profile'
 import Save from './Pages/Save/Save'
 import Sell from './Pages/Sell/Sell'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
 
 function App() {
 
   return (
     <>
+    <Navbar/>
       <Routes >
+        
         <Route element={<PublicRoute />}>
           <Route path='/' element={<LandingPage />} />
           <Route path='/login' element={<Auth />} />
@@ -29,6 +33,7 @@ function App() {
         <Route path='/sell' element={<Sell />} />
        </Route>
       </Routes>
+      <Footer/>
 
 
     </>

@@ -13,8 +13,18 @@
   ---text-color: #1A1A1A;
   ---description-color: #4A4A4A;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 a {
   text-decoration: none;
 
+}
+
+li{
+  list-style: none;
+  cursor: pointer;
 }
