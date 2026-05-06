@@ -65,6 +65,10 @@
     align-items: center;
 }
 
+.mobile-menu li{
+    font-weight: 600;
+}
+
 .mobile-menu li:hover {
     color: #0056D2;
 
