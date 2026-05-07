@@ -13,6 +13,9 @@ const Navbar = () => {
             console.log("working");
 
         }
+        else{
+            setScroll(false); 
+        }
     }
 
     useEffect(() => {
@@ -31,10 +34,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-conatiner-two">
                     <ul>
-                        <li className={navbar === "home" ? "active" : ""} onClick={() => setNavbar("home")}>Home</li>
-                        <li className={navbar === "browse" ? "active" : ""} onClick={() => setNavbar("browse")}>Browse</li>
-                        <li className={navbar === "sell" ? "active" : ""} onClick={() => setNavbar("sell")}>Sell</li>
-                        <li className={navbar === "save" ? "active" : ""} onClick={() => setNavbar("save")}>Save</li>
+                       <Link to="/home"><li className={navbar === "home" ? "active" : ""} onClick={() => setNavbar("home")}>Home</li></Link>
+                        <Link to="/browse"><li className={navbar === "browse" ? "active" : ""} onClick={() => setNavbar("browse")}>Browse</li></Link>
+                        <Link to="/sell"><li className={navbar === "sell" ? "active" : ""} onClick={() => setNavbar("sell")}>Sell</li></Link>
+                        <Link to="/save"><li className={navbar === "save" ? "active" : ""} onClick={() => setNavbar("save")}>Save</li></Link>
                     </ul>
                 </div>
                 <div className="navbar-conatiner-three">
@@ -45,10 +48,10 @@ const Navbar = () => {
             </div>
             <div className={`mobile-menu ${mobileMenu === 'active' ? 'menu-active' : ''}`}>
                 <ul>
-                    <li className={navbar === "home" ? "active" : ""} onClick={() => setNavbar("home")}>Home</li>
-                    <li className={navbar === "browse" ? "active" : ""} onClick={() => setNavbar("browse")}>Browse</li>
-                    <li className={navbar === "sell" ? "active" : ""} onClick={() => setNavbar("sell")}>Sell</li>
-                    <li className={navbar === "save" ? "active" : ""} onClick={() => setNavbar("save")}>Save</li>
+                    <Link to="/home"><li className={navbar === "home" ? "active" : ""} onClick={() => setNavbar("home")}>Home</li></Link>
+                    <Link to="/browse"><li className={navbar === "browse" ? "active" : ""} onClick={() => setNavbar("browse")}>Browse</li></Link>
+                    <Link to="/sell"><li className={navbar === "sell" ? "active" : ""} onClick={() => setNavbar("sell")}>Sell</li></Link>
+                    <Link to="/save"><li className={navbar === "save" ? "active" : ""} onClick={() => setNavbar("save")}>Save</li></Link>
                 </ul>
             </div>
 

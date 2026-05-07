@@ -55,15 +55,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     padding: 50px;
 
+
 }
 
 .SearchPrecisely {
-  height: 250px;
+    height: 250px;
     align-items: center;
     border-radius: 8px;
     padding: 20px;
@@ -172,7 +173,350 @@
 
 
 
+/** ---- Section Three ---- */
+.section-three-heading {
+    width: 100%;
+    text-align: center;
+}
 
+
+
+
+/* section four */
+/* TestimonialSection.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.testimonial-wrapper {
+    width: 100%;
+    background: #f4f4f4;
+    padding: 60px 6%;
+    font-family: Georgia, serif;
+}
+
+/* TOP SECTION */
+
+.top-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 450px);
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.content-side h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.content-side p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #444;
+    max-width: 600px;
+}
+
+/* STATS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-box {
+    border-left: 4px solid;
+    padding-left: 16px;
+}
+
+.stat-box h2 {
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.stat-box span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.blue {
+    border-color: #0047ff;
+}
+
+.green {
+    border-color: #2d7a46;
+}
+
+.brown {
+    border-color: #8b5e3c;
+}
+
+/* IMAGE */
+
+.image-side {
+    background: #e9e9e9;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.image-side img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* TESTIMONIAL SECTION */
+
+.testimonial-section {
+    text-align: center;
+}
+
+.small-title {
+    color: #0033cc;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.testimonial-section h1 {
+    font-size: 2.6rem;
+    margin-top: 12px;
+    margin-bottom: 50px;
+    color: #111;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+
+.testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card p {
+    line-height: 1.9;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* USER */
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+}
+
+.user-info h3 {
+    font-size: 1rem;
+    color: #111;
+}
+
+.user-info span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/*-------------------section five--------*/
+/* FAQSection.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.faq-section {
+    width: 100%;
+    background: #f4f4f4;
+    padding: 80px 6%;
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+/* TITLE */
+
+.faq-small-title {
+    color: #0047ff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.faq-section h1 {
+    font-size: 2.7rem;
+    margin-top: 14px;
+    margin-bottom: 50px;
+    color: #111;
+}
+
+/* FAQ CONTAINER */
+
+.faq-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* FAQ BOX */
+
+.faq-box {
+    background: #ececec;
+    border-radius: 14px;
+    padding: 22px 24px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.faq-box.active {
+    background: #e9e9e9;
+}
+
+/* QUESTION */
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    color: #111;
+}
+
+.faq-question span {
+    font-size: 0.9rem;
+    color: #222;
+}
+
+/* ANSWER */
+
+.faq-answer {
+    margin-top: 20px;
+}
+
+.faq-answer p {
+    color: #444;
+    line-height: 1.9;
+    font-size: 1rem;
+    max-width: 950px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .faq-section {
+        padding: 60px 5%;
+    }
+
+    .faq-section h1 {
+        font-size: 2rem;
+    }
+
+    .faq-box {
+        padding: 20px;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .faq-section h1 {
+        font-size: 1.7rem;
+    }
+
+    .faq-question {
+        align-items: flex-start;
+    }
+
+    .faq-question h3 {
+        line-height: 1.6;
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .content-side h1 {
+        font-size: 2rem;
+    }
+
+    .testimonial-section h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+    .content-side h1 {
+        font-size: 1.7rem;
+    }
+
+    .testimonial-section h1 {
+        font-size: 1.7rem;
+    }
+}
 
 
 

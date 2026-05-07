@@ -1,0 +1,374 @@
+/* =====================================================
+   TopDistricts – Responsive CSS (Mobile-first)
+   Breakpoints: mobile <480px | tablet 480-768px | laptop 768-1200px | wide >1200px
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  --tds-accent:        #c0392b;
+  --tds-accent-light:  #e74c3c;
+  --tds-text-dark:     #1a1a1a;
+  --tds-text-muted:    #666;
+  --tds-bg:            #f4f4ef;
+  --tds-card-radius:   14px;
+  --tds-gap:           clamp(8px, 1.5vw, 12px);
+  --tds-pad-x:         clamp(14px, 4vw, 32px);
+  --tds-pad-y:         clamp(20px, 4vw, 36px);
+  --tds-shadow:        0 4px 16px rgba(0, 0, 0, 0.18);
+  --tds-shadow-hover:  0 14px 36px rgba(0, 0, 0, 0.30);
+  --tds-transition:    0.30s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* ── Section wrapper ── */
+.tds-section {
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  background: var(--tds-bg);
+  padding: var(--tds-pad-y) var(--tds-pad-x);
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  /* Center on page in demo context */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.tds-header {
+  margin-bottom: clamp(14px, 3vw, 22px);
+}
+
+.tds-eyebrow {
+  display: block;
+  font-size: clamp(10px, 1.1vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--tds-accent);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.tds-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tds-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 3.5vw, 30px);
+  font-weight: 700;
+  color: var(--tds-text-dark);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.tds-view-all {
+  font-size: clamp(12px, 1.3vw, 14px);
+  font-weight: 600;
+  color: var(--tds-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s, gap 0.2s;
+  white-space: nowrap;
+}
+
+.tds-view-all:hover,
+.tds-view-all:focus-visible {
+  border-color: var(--tds-accent);
+  outline: none;
+}
+
+.tds-view-all:hover .tds-arrow {
+  transform: translateX(4px);
+}
+
+.tds-arrow {
+  display: inline-block;
+  transition: transform 0.22s ease;
+}
+
+/* ══════════════════════════════════════
+   GRID — responsive columns
+   Mobile:  2 columns
+   Tablet:  4 columns (scrollable hint)
+   Laptop+: 4 columns fixed
+   ══════════════════════════════════════ */
+.tds-grid {
+  display: grid;
+  /* Default mobile: 2 equal columns */
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--tds-gap);
+}
+
+/* Tablet 480px+ → horizontal 4-column scroll strip */
+@media (min-width: 480px) {
+  .tds-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--tds-gap);
+    overflow-x: auto;
+    /* Smooth scroll snap on smaller tablets */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar but keep function */
+    scrollbar-width: none;
+  }
+  .tds-grid::-webkit-scrollbar { display: none; }
+}
+
+/* Laptop 768px+ → proper 4-column grid, no scroll */
+@media (min-width: 768px) {
+  .tds-grid {
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+}
+
+/* ══════════════════════════════════════
+   CARD
+   ══════════════════════════════════════ */
+.tds-card {
+  position: relative;
+  border-radius: var(--tds-card-radius);
+  overflow: hidden;
+  cursor: pointer;
+  /* Mobile: square-ish; desktop: taller portrait */
+  aspect-ratio: 3 / 4;
+  box-shadow: var(--tds-shadow);
+  transition:
+    transform var(--tds-transition),
+    box-shadow var(--tds-transition);
+  /* Snap point for tablet scroll */
+  scroll-snap-align: start;
+  /* Keyboard focus ring */
+  outline-offset: 3px;
+}
+
+.tds-card:focus-visible {
+  outline: 2.5px solid var(--tds-accent-light);
+}
+
+/* Hover / active (touch) state */
+.tds-card:hover,
+.tds-card--active {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: var(--tds-shadow-hover);
+}
+
+/* On mobile, dampen lift so cards don't escape grid */
+@media (max-width: 479px) {
+  .tds-card:hover,
+  .tds-card--active {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+/* ── Badge ── */
+.tds-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #fff;
+  font-size: clamp(9px, 1vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  /* Fade in on hover */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tds-card:hover .tds-badge,
+.tds-card--active .tds-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Always show badge on touch devices */
+@media (hover: none) {
+  .tds-badge {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
+
+/* ── SVG Illustration ── */
+.tds-illus-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6% 6% 32%;
+}
+
+.tds-svg {
+  width: 100%;
+  height: 100%;
+  /* Slight scale on hover for parallax feel */
+  transition: transform 0.4s ease;
+}
+
+.tds-card:hover .tds-svg,
+.tds-card--active .tds-svg {
+  transform: scale(1.07);
+}
+
+/* ── Gradient Overlay ── */
+.tds-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 35%,
+    rgba(0, 0, 0, 0.45) 65%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+  pointer-events: none;
+  /* Deepen overlay on hover */
+  transition: opacity 0.3s ease;
+}
+
+.tds-card:hover .tds-overlay,
+.tds-card--active .tds-overlay {
+  opacity: 1.15; /* visually same; real deepening via ::after below */
+}
+
+/* Extra overlay deepening pseudo-element */
+.tds-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tds-card:hover::after,
+.tds-card--active::after {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* ── Info bar ── */
+.tds-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: clamp(8px, 2vw, 14px) clamp(8px, 2vw, 12px);
+  /* Slide up gently on hover */
+  transform: translateY(0);
+  transition: transform 0.28s ease;
+}
+
+.tds-card:hover .tds-info,
+.tds-card--active .tds-info {
+  transform: translateY(-3px);
+}
+
+.tds-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(13px, 1.8vw, 17px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 3px;
+  line-height: 1.2;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  /* Prevent overflow on small cards */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tds-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: clamp(10px, 1.1vw, 12px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tds-pin {
+  width: 9px;
+  height: 12px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ══════════════════════════════════════
+   BREAKPOINT OVERRIDES
+   ══════════════════════════════════════ */
+
+/* ── Extra small phones (< 360px) ── */
+@media (max-width: 359px) {
+  .tds-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .tds-section {
+    padding: 16px 12px;
+  }
+}
+
+/* ── Small mobile (360–479px) ── */
+@media (min-width: 360px) and (max-width: 479px) {
+  .tds-section { padding: 20px 14px; }
+}
+
+/* ── Tablet (480–767px) ── */
+@media (min-width: 480px) and (max-width: 767px) {
+  .tds-section { padding: 24px 18px; }
+  .tds-card { aspect-ratio: 2 / 3; min-width: 130px; }
+}
+
+/* ── Laptop (768–1199px) ── */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tds-section { padding: 28px 24px; }
+  .tds-card { aspect-ratio: 3 / 2; }
+}
+
+/* ── Wide desktop (1200px+) ── */
+@media (min-width: 1200px) {
+  .tds-section { padding: 40px 40px; }
+  .tds-gap { --tds-gap: 14px; }
+  .tds-card { aspect-ratio: 3 / 4; }
+}
+
+/* ══════════════════════════════════════
+   REDUCED MOTION
+   ══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .tds-card,
+  .tds-badge,
+  .tds-svg,
+  .tds-overlay,
+  .tds-info,
+  .tds-arrow,
+  .tds-view-all {
+    transition: none !important;
+    animation: none !important;
+  }
+}
