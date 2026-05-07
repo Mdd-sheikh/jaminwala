@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 
@@ -8,13 +8,22 @@ const Navbar = () => {
     const [scroll, setScroll] = useState(false);
 
     const Handlenavbar = () => {
-        if (window.scrollY >= 100) {
+        if (window.scrollY > 500) {
             setScroll(true);
+            console.log("working");
+
         }
     }
 
+    useEffect(() => {
+        window.addEventListener("scroll", Handlenavbar);
+        return () => {
+            window.removeEventListener("scroll", Handlenavbar);
+        };
+    }, [])
+
     return (
-        <nav className={`navbar ${scroll ? 'scrolled' : ''}`} onScroll={Handlenavbar}>
+        <nav className={`navbar ${scroll ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <div className="navbar-conatiner-one">
                     <button onClick={() => setMobileMenu("active")}><i class="fa-solid fa-bars"></i></button>

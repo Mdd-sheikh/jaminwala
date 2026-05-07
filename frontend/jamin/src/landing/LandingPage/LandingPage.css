@@ -1,12 +1,36 @@
-
-.landpage{
+.landpage {
     width: 100%;
 }
 
-.landingpage-section-one img{
+.landingpage-section-one {
     width: 100%;
-    
-    
+    background-image: linear-gradient(rgba(4, 3, 3, 0.645), rgba(4, 3, 3, 0.645), rgba(0, 0, 0, 0.645)),
+        url(../../assets/images/land_image_seven.png);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    align-content: center;
+    display: grid;
+    gap: 20px;
+}
+
+.landingpage-section-one button {
+    width: max-content;
+    margin: 0 auto;
+    background-color: #0056D2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.landingpage-section-one h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: max(27px, 2.5vw);
 }
 
 
@@ -29,7 +53,7 @@
 
 
 @media (max-width:550px) {
-    .landpage{
+    .landpage {
         margin-top: 40px;
     }
 }
