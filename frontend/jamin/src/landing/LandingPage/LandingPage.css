@@ -33,7 +33,135 @@
     font-size: max(27px, 2.5vw);
 }
 
+.landingpage-section-two {
+    width: 100%;
+    gap: 20px;
+    padding: 40px 0;
+}
 
+.section-two-heading {
+    text-align: center;
+}
+
+
+
+
+.section-two-boxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px;
+
+}
+
+.SearchPrecisely {
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgb(240, 235, 235);
+    display: grid;
+    gap: 5px;
+}
+
+.SearchPrecisely:hover{
+    transform: translateY(-3px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.SearchPrecisely i {
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #9cbce9;
+    color: rgb(0, 0, 0);
+    align-content: center;
+    border-radius: 5px;
+
+}
+.SearchPrecisely h2 {
+    font-size: 17px;
+}
+.SearchPrecisely p {
+    font-size: 14px;
+}
+
+.VerifyLegally {
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgb(240, 235, 235);
+    display: grid;
+    gap: 5px;
+}
+
+.VerifyLegally:hover{
+    transform: translateY(-3px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.VerifyLegally i {
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #9cbce9;
+    color: rgb(0, 0, 0);
+    align-content: center;
+    border-radius: 5px;
+}
+.VerifyLegally h2{
+    font-size: 17px;
+}
+
+.VerifyLegally p {
+    font-size: 14px;
+}
+
+.ContactDirectly {
+    width: 400px;
+    height: 200px;
+    border: 1px solid rgb(240, 235, 235);
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    gap: 5px;
+}
+.ContactDirectly:hover{
+    transform: translateY(-3px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ContactDirectly i {
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #9cbce9;
+    color: rgb(0, 0, 0);
+    align-content: center;
+    border-radius: 5px;
+}
+
+.ContactDirectly h2 {
+    font-size: 17px;
+}
+
+.ContactDirectly p {
+    font-size: 14px;
+}
 
 
 
